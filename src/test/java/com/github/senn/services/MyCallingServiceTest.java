@@ -8,6 +8,7 @@ import org.apache.sling.testing.mock.sling.context.SlingContextImpl;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -200,6 +201,29 @@ class MyCallingServiceTest {
 
         //does not work, ordered in the reverse order they are registered
         // 99999 > 0 > IntegerMax > negative > 100
+    }
+
+    @Test
+    void testStandaloneCase() {
+        final int lowRanking = 5;
+        final int midRanking = 333;
+        final int highRanking = 1000;
+
+        RankingService lowRankingService = () -> System.out.println(lowRanking);
+        RankingService midRankingService = () -> System.out.println(midRanking);
+        RankingService highRankingService = () -> System.out.println(highRanking);
+
+        OsgiContextImpl context = new OsgiContextImpl();
+        context.registerService(RankingService.class, midRankingService, Map.of("service.ranking:Integer", midRanking));
+        context.registerService(RankingService.class, highRankingService, Map.of("service.ranking:Integer", highRanking));
+        context.registerService(RankingService.class, lowRankingService, Map.of("service.ranking:Integer", lowRanking));
+
+        MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
+        List<RankingService> rankingServices = svc.getServices();
+
+        assertEquals(lowRankingService, rankingServices.get(0));
+        assertEquals(midRankingService, rankingServices.get(1));
+        assertEquals(highRankingService, rankingServices.get(2));
     }
 
 }
