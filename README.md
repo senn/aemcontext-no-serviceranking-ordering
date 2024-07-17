@@ -33,3 +33,8 @@ See the unit test for more info.  The test fails for every level of context impl
 ## Expectation
 
 A representative list of implementations as it would be in an actual OSGi environment.
+
+## Remarks
+
+I noticed that this service ranking only works correctly when using `@ServiceRanking`...
+When I remove this annotation and use the component property `service.ranking`, the ordering is also wrong in OSGi itself...?!?
