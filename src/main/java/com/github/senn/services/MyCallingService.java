@@ -12,6 +12,7 @@ public class MyCallingService {
 
     private static final Logger log = LoggerFactory.getLogger(MyCallingService.class);
 
+    @Reference
     private volatile List<RankingService> rankingServices;
 
     public void printServices() {
