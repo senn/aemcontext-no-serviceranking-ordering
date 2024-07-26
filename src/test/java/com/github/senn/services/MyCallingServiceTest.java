@@ -23,11 +23,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInCorrectlyRegisteredOrder_AemContext() {
         final AemContext context = new AemContext();
         //registering in specific correct order
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -46,11 +46,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInRandomRegisteredOrder_AemContext() {
         final AemContext context = new AemContext();
         //registering in random order
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -69,11 +69,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInCorrectlyRegisteredOrder_AemContextImpl() {
         final AemContextImpl context = new AemContextImpl();
         //registering in specific correct order
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -92,11 +92,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInRandomRegisteredOrder_AemContextImpl() {
         final AemContextImpl context = new AemContextImpl();
         //registering in random order
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -115,11 +115,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInCorrectlyRegisteredOrder_SlingContext() {
         final SlingContextImpl context = new SlingContextImpl();
         //registering in specific correct order
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -138,11 +138,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInRandomRegisteredOrder_SlingContextImpl() {
         final SlingContextImpl context = new SlingContextImpl();
         //registering in random order
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -161,11 +161,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInCorrectlyRegisteredOrder_OsgiContextImpl() {
         final OsgiContextImpl context = new OsgiContextImpl();
         //registering in specific correct order
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -184,11 +184,11 @@ class MyCallingServiceTest {
     void testServiceRankingsInRandomRegisteredOrder_OsgiContextImpl() {
         final OsgiContextImpl context = new OsgiContextImpl();
         //registering in random order
-        RankingService third = context.registerService(RankingService.class, new Ranking100Service());
-        RankingService first = context.registerService(RankingService.class, new NegativeRankingService());
-        RankingService fifth = context.registerService(RankingService.class, new IntegerMaxRankingService());
-        RankingService second = context.registerService(RankingService.class, new Ranking0Service());
-        RankingService fourth = context.registerService(RankingService.class, new Ranking99999Service());
+        RankingService third = context.registerInjectActivateService(new Ranking100Service());
+        RankingService first = context.registerInjectActivateService(new NegativeRankingService());
+        RankingService fifth = context.registerInjectActivateService(new IntegerMaxRankingService());
+        RankingService second = context.registerInjectActivateService(new Ranking0Service());
+        RankingService fourth = context.registerInjectActivateService(new Ranking99999Service());
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
@@ -214,9 +214,9 @@ class MyCallingServiceTest {
         RankingService highRankingService = () -> System.out.println(highRanking);
 
         OsgiContextImpl context = new OsgiContextImpl();
-        context.registerService(RankingService.class, midRankingService, Map.of("service.ranking:Integer", midRanking));
-        context.registerService(RankingService.class, highRankingService, Map.of("service.ranking:Integer", highRanking));
-        context.registerService(RankingService.class, lowRankingService, Map.of("service.ranking:Integer", lowRanking));
+        context.registerService(RankingService.class, midRankingService, Map.of("service.ranking", midRanking));
+        context.registerService(RankingService.class, highRankingService, Map.of("service.ranking", highRanking));
+        context.registerService(RankingService.class, lowRankingService, Map.of("service.ranking", lowRanking));
 
         MyCallingService svc = context.registerInjectActivateService(new MyCallingService());
         List<RankingService> rankingServices = svc.getServices();
